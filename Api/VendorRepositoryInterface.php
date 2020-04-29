@@ -1,68 +1,59 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Obukhovsky\Vendor\Api;
-
-use Magento\Framework\Api\SearchCriteriaInterface;
-use Magento\Framework\Api\SearchResultsInterface;
-use Magento\Framework\Exception\LocalizedException;
-use Magento\Framework\Exception\NoSuchEntityException;
-use Obukhovsky\Vendor\Api\Data\VendorInterface;
 
 interface VendorRepositoryInterface
 {
-
     /**
      * Create new Vendor
      *
-     * @return VendorInterface
+     * @return \Obukhovsky\Vendor\Api\Data\VendorInterface
      */
-    public function create(): VendorInterface;
+    public function create();
 
     /**
      * Save vendor.
      *
-     * @param VendorInterface $vendor
-     * @return VendorInterface
-     * @throws LocalizedException
+     * @param \Obukhovsky\Vendor\Api\Data\VendorInterface $vendor
+     * @return \Obukhovsky\Vendor\Api\Data\VendorInterface
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function save(Data\VendorInterface $vendor): VendorInterface;
+    public function save(\Obukhovsky\Vendor\Api\Data\VendorInterface $vendor);
 
     /**
      * Retrieve vendor.
      *
      * @param int $vendorId
-     * @return VendorInterface
-     * @throws LocalizedException
+     * @return \Obukhovsky\Vendor\Api\Data\VendorInterface
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function getById($vendorId): VendorInterface;
+    public function getById($vendorId);
 
     /**
      * Delete vendor.
      *
-     * @param VendorInterface $vendor
+     * @param \Obukhovsky\Vendor\Api\Data\VendorInterface $vendor
      * @return bool true on success
-     * @throws LocalizedException
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function delete(Data\VendorInterface $vendor): bool;
+    public function delete(\Obukhovsky\Vendor\Api\Data\VendorInterface $vendor);
 
     /**
      * Delete vendor by ID.
      *
      * @param int $vendorId
      * @return bool true on success
-     * @throws NoSuchEntityException
-     * @throws LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function deleteById($vendorId): bool;
+    public function deleteById($vendorId);
 
     /**
      * Retrieve vendors matching the specified criteria.
      *
-     * @param SearchCriteriaInterface $searchCriteria
-     * @return SearchResultsInterface
-     * @throws LocalizedException
+     * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+     * @return \Obukhovsky\Vendor\Api\Data\VendorSearchResultsInterface
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
-    public function getList(SearchCriteriaInterface $searchCriteria): SearchResultsInterface;
+    public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
 }

@@ -3,6 +3,8 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Obukhovsky\Vendor\Api\Data\VendorInterface" type="Obukhovsky\Vendor\Model\Vendor"/>
     <preference for="Obukhovsky\Vendor\Api\VendorRepositoryInterface" type="Obukhovsky\Vendor\Model\VendorRepository"/>
+    <preference for="Obukhovsky\Vendor\Api\Data\VendorSearchResultsInterface"
+                type="Obukhovsky\Vendor\Model\VendorSearchResults"/>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">

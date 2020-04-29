@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Obukhovsky\Vendor\Api\Data;
 
 interface VendorInterface
@@ -18,14 +16,14 @@ interface VendorInterface
      *
      * @return int|null
      */
-    public function getId(): ?int;
+    public function getId();
 
     /**
      * Get name
      *
      * @return string|null
      */
-    public function getName(): ?string;
+    public function getName();
 
     /**
      * Set ID
@@ -33,7 +31,7 @@ interface VendorInterface
      * @param int $id
      * @return VendorInterface
      */
-    public function setId($id): VendorInterface;
+    public function setId($id);
 
     /**
      * Set name
@@ -41,5 +39,5 @@ interface VendorInterface
      * @param string $name
      * @return VendorInterface
      */
-    public function setName($name): VendorInterface;
+    public function setName($name);
 }

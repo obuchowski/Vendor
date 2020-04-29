@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Obukhovsky_Vendor::vendor"
+             translate="title"
+             sortOrder="11"
+             title="Vendors"
+             module="Obukhovsky_Vendor"
+             parent="Magento_Catalog::catalog"
+             resource="Obukhovsky_Vendor::vendor"
+             action="vendor/vendor/"
+             dependsOnModule="Magento_Catalog"
+        />
+    </menu>
+</config>

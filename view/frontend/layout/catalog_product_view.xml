@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <block class="Obukhovsky\Vendor\Block\ProductVendors" name="ob_vendors"
+                   template="Obukhovsky_Vendor::vendors.phtml" before="product.info.price">
+                <arguments>
+                    <argument name="ob_vendor_get_vendors_by_id" xsi:type="object">\Obukhovsky\Vendor\Model\GetVendorsByProductId</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

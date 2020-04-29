@@ -1,0 +1,9 @@
+<?php
+/** @var \Obukhovsky\Vendor\Block\ProductVendors $block */
+$vendors = $block->getVendors();
+?>
+<div class="ob-vendors">
+    <?php foreach ($vendors as $vendor): ?>
+    <a class="vendor" href="#"><?= $block->escapeHtml($vendor->getName()); ?></a>
+    <?php endforeach;?>
+</div>

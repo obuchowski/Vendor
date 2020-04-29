@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="product-details">
+        <container name="container_vendors" sortOrder="999">
+            <field name="vendor_ids" formElement="multiselect" sortOrder="10">
+                <settings>
+                    <scopeLabel>[GLOBAL]</scopeLabel>
+                    <dataScope>vendor_ids</dataScope>
+                    <dataType>string</dataType>
+                    <label translate="true">Vendors</label>
+                </settings>
+                <formElements>
+                    <multiselect>
+                        <settings>
+                            <options class="Obukhovsky\Vendor\Model\Source\Vendors"/>
+                        </settings>
+                    </multiselect>
+                </formElements>
+            </field>
+        </container>
+    </fieldset>
+</form>

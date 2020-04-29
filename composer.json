@@ -1,0 +1,19 @@
+{
+    "name": "obukhovsky/module-vendor",
+    "description": "Marketplace Core",
+    "require": {
+        "php": "~7.1.3||~7.2.0||~7.3.0",
+        "magento/framework": "100.0.*"
+    },
+    "type": "magento2-module",
+    "version": "0.1.0",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Obukhovsky\\Vendor\\": ""
+        }
+    }
+}

@@ -19,6 +19,7 @@ interface VendorRepositoryInterface
      * @return VendorInterface
      */
     public function create(): VendorInterface;
+
     /**
      * Save vendor.
      *

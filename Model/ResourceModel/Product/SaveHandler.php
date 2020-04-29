@@ -51,7 +51,7 @@ class SaveHandler implements ExtensionInterface
     public function execute($product, $arguments = [])
     {
         /** @var ProductInterface $product */
-        $data =  $this->request->getParam('product');
+        $data = $this->request->getParam('product');
         if ($product->getData('vendor_ids') || array_key_exists('vendor_ids', $data)) {
             $vendors = array_filter((array)$product->getData('vendor_ids'));
             $connection = $this->resourceVendor->getConnection();

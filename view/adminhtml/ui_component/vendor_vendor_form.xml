@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">vendor_vendor_form.ob_vendor_vendor_source</item>
@@ -51,7 +52,7 @@
                 <visible>false</visible>
             </settings>
         </field>
-        <field name="name" formElement="input"  sortOrder="20">
+        <field name="name" formElement="input" sortOrder="20">
             <settings>
                 <dataScope>name</dataScope>
                 <dataType>text</dataType>

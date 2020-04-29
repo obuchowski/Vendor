@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Obukhovsky\Vendor\Ui\Component\Listing\Column\Vendor;
 
 use Magento\Framework\UrlInterface;
@@ -15,6 +17,13 @@ class EditAction extends Column
      */
     private $urlBuilder;
 
+    /**
+     * @param ContextInterface $context
+     * @param UiComponentFactory $uiComponentFactory
+     * @param UrlInterface $urlBuilder
+     * @param array $components
+     * @param array $data
+     */
     public function __construct(
         ContextInterface $context,
         UiComponentFactory $uiComponentFactory,
@@ -25,11 +34,11 @@ class EditAction extends Column
         parent::__construct($context, $uiComponentFactory, $components, $data);
         $this->urlBuilder = $urlBuilder;
     }
+
     /**
-     * @param array $dataSource
-     * @return array
+     * {@inheritDoc}
      */
-    public function prepareDataSource(array $dataSource)
+    public function prepareDataSource(array $dataSource): array
     {
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as &$item) {
@@ -46,6 +55,7 @@ class EditAction extends Column
                 }
             }
         }
+
         return $dataSource;
     }
 }

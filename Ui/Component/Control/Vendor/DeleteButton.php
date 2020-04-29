@@ -21,6 +21,10 @@ class DeleteButton implements ButtonProviderInterface
      */
     private $urlBuilder;
 
+    /**
+     * @param RequestInterface $request
+     * @param UrlInterface $urlBuilder
+     */
     public function __construct(
         RequestInterface $request,
         UrlInterface $urlBuilder
@@ -37,7 +41,7 @@ class DeleteButton implements ButtonProviderInterface
         $data = [];
         $vendorId = $this->request->getParam(VendorInterface::VENDOR_ID);
         if (null !== $vendorId) {
-            $confirmationMessage =  __('This Vendor will be deleted! Are you sure?');
+            $confirmationMessage = __('This Vendor will be deleted! Are you sure?');
             $url = $this->urlBuilder->getUrl('*/*/delete');
             $data = [
                 'label' => __('Delete'),

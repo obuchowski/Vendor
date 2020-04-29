@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Obukhovsky\Vendor\Ui\DataProvider;
 
 use Magento\Framework\App\Request\DataPersistorInterface;
@@ -25,7 +27,15 @@ class VendorDataProvider extends AbstractDataProvider
      */
     private $loadedData;
 
-
+    /**
+     * @param $name
+     * @param $primaryFieldName
+     * @param $requestFieldName
+     * @param CollectionFactory $pageCollectionFactory
+     * @param DataPersistorInterface $dataPersistor
+     * @param array $meta
+     * @param array $data
+     */
     public function __construct(
         $name,
         $primaryFieldName,
@@ -43,7 +53,7 @@ class VendorDataProvider extends AbstractDataProvider
     /**
      * {@inheritDoc}
      */
-    public function getData()
+    public function getData(): array
     {
         if (isset($this->loadedData)) {
             return $this->loadedData;

@@ -93,14 +93,14 @@
                 <resizeDefaultWidth>55</resizeDefaultWidth>
             </settings>
         </selectionsColumn>
-        <column name="vendor_id" sortOrder="1">
+        <column name="vendor_id" sortOrder="10">
             <settings>
                 <filter>textRange</filter>
                 <label translate="true">ID</label>
                 <sorting>desc</sorting>
             </settings>
         </column>
-        <column name="name" sortOrder="10">
+        <column name="name" sortOrder="20">
             <settings>
                 <label translate="true">Name</label>
             </settings>

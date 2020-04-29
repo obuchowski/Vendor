@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Obukhovsky\Vendor\Model\Source;
 
-use Magento\Framework\Data\OptionSourceInterface;
 use Magento\Framework\Api\SearchCriteriaBuilder;
+use Magento\Framework\Data\OptionSourceInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Obukhovsky\Vendor\Api\VendorRepositoryInterface;
 

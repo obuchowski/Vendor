@@ -21,7 +21,7 @@ class Delete extends Vendor
         /** @var Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
         $resultRedirect->setPath('*/*/');
-        $vendorId =  $this->getRequest()->getPost(VendorInterface::VENDOR_ID);
+        $vendorId = $this->getRequest()->getPost(VendorInterface::VENDOR_ID);
         if ($vendorId) {
             try {
                 $this->getVendorRepository()->deleteById($vendorId);

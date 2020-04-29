@@ -79,6 +79,14 @@ class InstallObukhovskyVendor implements DataPatchInterface
     /**
      * {@inheritdoc}
      */
+    public static function getDependencies(): array
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function apply(): InstallObukhovskyVendor
     {
         $this->appState->emulateAreaCode(Area::AREA_GLOBAL, [$this, 'install']);
@@ -158,14 +166,6 @@ class InstallObukhovskyVendor implements DataPatchInterface
         $collection->setPageSize(200); //187 for sample data
         $collection->getSelect()->order(new \Zend_Db_Expr('RAND()'));
         return $collection;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function getDependencies(): array
-    {
-        return [];
     }
 
     /**

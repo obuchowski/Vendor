@@ -69,27 +69,6 @@ class VendorRepository implements VendorRepositoryInterface
     /**
      * {@inheritDoc}
      */
-    public function create(): VendorInterface
-    {
-        return $this->vendorFactory->create();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getById($vendorId): VendorInterface
-    {
-        $vendor = $this->create();
-        $this->resource->load($vendor, $vendorId);
-        if (!$vendor->getId()) {
-            throw new NoSuchEntityException(__('The vendor with the "%1" ID doesn\'t exist.', $vendorId));
-        }
-        return $vendor;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function save(Data\VendorInterface $vendor): VendorInterface
     {
         try {
@@ -98,6 +77,14 @@ class VendorRepository implements VendorRepositoryInterface
             throw new CouldNotSaveException(__($exception->getMessage()));
         }
         return $vendor;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function deleteById($vendorId): bool
+    {
+        return $this->delete($this->getById($vendorId));
     }
 
     /**
@@ -116,9 +103,22 @@ class VendorRepository implements VendorRepositoryInterface
     /**
      * {@inheritDoc}
      */
-    public function deleteById($vendorId): bool
+    public function getById($vendorId): VendorInterface
     {
-        return $this->delete($this->getById($vendorId));
+        $vendor = $this->create();
+        $this->resource->load($vendor, $vendorId);
+        if (!$vendor->getId()) {
+            throw new NoSuchEntityException(__('The vendor with the "%1" ID doesn\'t exist.', $vendorId));
+        }
+        return $vendor;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function create(): VendorInterface
+    {
+        return $this->vendorFactory->create();
     }
 
     /**

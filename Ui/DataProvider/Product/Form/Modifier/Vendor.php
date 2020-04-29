@@ -44,7 +44,7 @@ class Vendor extends AbstractModifier
 
             //[1,2,3] doesn't work with UI components. ['1','2','3'] does.
             $idsAsString = array_map(function ($id) {
-                return (string) $id;
+                return (string)$id;
             }, $ids);
             $data[$productId]['product']['vendor_ids'] = $idsAsString;
         }

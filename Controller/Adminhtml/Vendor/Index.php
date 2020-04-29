@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Obukhovsky\Vendor\Controller\Adminhtml\Vendor;
 
-use Magento\Framework\Controller\ResultInterface;
-use Obukhovsky\Vendor\Controller\Adminhtml\Vendor;
 use Magento\Backend\Model\View\Result\Page;
 use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\Controller\ResultInterface;
+use Obukhovsky\Vendor\Controller\Adminhtml\Vendor;
 
 class Index extends Vendor
 {

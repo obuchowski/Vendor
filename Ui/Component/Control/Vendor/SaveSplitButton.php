@@ -40,6 +40,7 @@ class SaveSplitButton implements ButtonProviderInterface
             'sort_order' => 40,
         ];
     }
+
     /**
      * @return array
      */

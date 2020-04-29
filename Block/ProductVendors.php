@@ -6,8 +6,8 @@ namespace Obukhovsky\Vendor\Block;
 
 use Magento\Catalog\Block\Product\View\Description as ProductDescription;
 use Magento\Framework\Exception\LocalizedException;
-use Obukhovsky\Vendor\Model\GetVendorsByProductId;
 use Obukhovsky\Vendor\Api\Data\VendorInterface;
+use Obukhovsky\Vendor\Model\GetVendorsByProductId;
 
 class ProductVendors extends ProductDescription
 {
@@ -22,20 +22,15 @@ class ProductVendors extends ProductDescription
     private $vendors;
 
     /**
-     * @return GetVendorsByProductId
-     * @throws LocalizedException
+     * {@inheritDoc}
      */
-    private function getGetVendorsByProductId(): GetVendorsByProductId
+    protected function _toHtml(): string
     {
-        if (!$this->getVendorsByProductId) {
-            $this->getVendorsByProductId = $this->getData('ob_vendor_get_vendors_by_id');
-            if (!$this->getVendorsByProductId instanceof GetVendorsByProductId) {
-                throw new LocalizedException(__('Vendors getter is not provided.'));
-            }
-
+        if ($this->getVendors()) {
+            return parent::_toHtml();
         }
 
-        return $this->getVendorsByProductId;
+        return '';
     }
 
     /**
@@ -53,14 +48,19 @@ class ProductVendors extends ProductDescription
     }
 
     /**
-     * {@inheritDoc}
+     * @return GetVendorsByProductId
+     * @throws LocalizedException
      */
-    protected function _toHtml(): string
+    private function getGetVendorsByProductId(): GetVendorsByProductId
     {
-        if ($this->getVendors()) {
-            return parent::_toHtml();
+        if (!$this->getVendorsByProductId) {
+            $this->getVendorsByProductId = $this->getData('ob_vendor_get_vendors_by_id');
+            if (!$this->getVendorsByProductId instanceof GetVendorsByProductId) {
+                throw new LocalizedException(__('Vendors getter is not provided.'));
+            }
+
         }
 
-        return '';
+        return $this->getVendorsByProductId;
     }
 }

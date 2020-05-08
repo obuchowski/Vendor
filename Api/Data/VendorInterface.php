@@ -19,7 +19,7 @@ interface VendorInterface
     public function getId();
 
     /**
-     * Get name
+     * Get name1
      *
      * @return string|null
      */
